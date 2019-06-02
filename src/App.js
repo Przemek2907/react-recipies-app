@@ -5,15 +5,20 @@ import Home from './pages/Home';
 import Recipies from './pages/Recipies';
 import SingleRecipie from './pages/SingleRecipie';
 import Default from './pages/Default';
+import {BrowserRouter as Router,Route, Switch} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Home />
-      <Recipies />
-      <SingleRecipie />
-      <Default />
-    </div>
+    <Router>
+    <main>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/recipies" exact component={Recipies} />
+        <Route path="/recipies/:id" component={SingleRecipie} />
+        <Route component={Default} />
+      </Switch>
+    </main>
+    </Router>
   );
 }
 
