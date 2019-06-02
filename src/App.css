@@ -1,3 +1,15 @@
 body {
   font-family: 'Open Sans', sans-serif !important;
 }
+
+.text-slanted {
+  font-family: 'Courgette', cursive;
+}
+
+.text-red {
+  color:red;
+}
+
+.letter-spacing {
+  letter-spacing: 0.5rem;
+}
