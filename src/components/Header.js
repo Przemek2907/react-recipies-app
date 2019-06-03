@@ -21,7 +21,7 @@ export default class Header extends Component {
     }
 }
 
-// Header.defaultProps = {
-//     title: "default title",
-//     styleClass: "header-hero"
-// }
+Header.defaultProps = {
+    title: "default title",
+    styleClass: "header-hero"
+}
