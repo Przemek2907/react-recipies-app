@@ -7,9 +7,20 @@ body {
 }
 
 .text-red {
-  color:red;
+  color:rgba(241,81,37,0.3);
 }
 
 .letter-spacing {
   letter-spacing: 0.5rem;
+}
+
+.header-hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(201, 140, 140, 0.3)), url("./images/homeBcg.jpeg") center/cover no-repeat;
+  min-height: calc(100vh - 56px);
+}
+
+@media screen and (max-width:575px){
+  .header-hero {
+    min-height: calc(100vh - 136px);
+  }
 }
