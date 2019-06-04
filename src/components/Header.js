@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import homeBcg from '../images/homeBcg.jpeg';
 
 export default class Header extends Component {
    

@@ -1,4 +1,4 @@
-export const recipeData = [
+export const recipieData = [
   {
     publisher: "Closet Cooking",
     title: "Jalapeno Popper Grilled Cheese Sandwich",
