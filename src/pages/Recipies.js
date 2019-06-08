@@ -9,7 +9,25 @@ export default class Recipies extends Component {
     this.state = {
       recipies: recipieData,
       search: '',
+      url: `https://www.food2fork.com/api/search?key=${process.env.REACT_APP_API_KEY}`
     }
+    this.getRecipies = this.getRecipies.bind(this);
+  };
+
+  async getRecipies(){
+    try{
+      const data = await fetch(this.state.url);
+      const jsonData = await data.json();
+      this.setState({
+        recipies: jsonData.recipes
+      })
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  componentDidMount() {
+    this.getRecipies();
   }
 
   handleChange = (e) => {
