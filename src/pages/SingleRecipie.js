@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {recipeData} from "../data/tempDetails";
 import {Link} from "react-router-dom";
 
 export default class SingleRecipie extends Component {
@@ -7,11 +6,28 @@ export default class SingleRecipie extends Component {
     super(props);
       const id = this.props.match.params.id;
       this.state = {
-        recipie:recipeData,
+        //recipie:recipeData,
+        recipie:{},
         id,
-        loading:false,
+        loading:true,
       }
   }
+
+  async componentDidMount() {
+    const url = `https://www.food2fork.com/api/search?key=${process.env.REACT_APP_API_KEY}&rId=${this.state.id}`;
+     try{
+      const response = await fetch(url);
+      const responseData = await response.json();
+      this.setState ({
+        recipies : responseData.recipe,
+        loading:false,
+      })
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   render() {
     const {title, image_url, ingredients, publisher, publisher_url, source_url} = this.state.recipie;
       if (this.state.loading){
